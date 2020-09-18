@@ -70,8 +70,8 @@ optimizer = optim.Adam(model_2.parameters(), lr=0.001)
 exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=5, gamma=0.5)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 batch_size = 32
-save_path = "./ResNet18_tr.pt"
+save_path = "./ResNet18_tl.pt"
 
-model_resnet18_tr,train_acc, train_loss,val_acc,val_loss = train_model(model_2, criterion, optimizer,
+model_resnet18_tl,train_acc, train_loss,val_acc,val_loss = train_model(model_2, criterion, optimizer,
                                                                        exp_lr_scheduler,trainloader_1, valloader_1, 
                                                                        batch_size,device, save_path, num_epochs=30)

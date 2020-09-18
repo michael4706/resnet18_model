@@ -26,9 +26,9 @@ class ResNet18(nn.Module):
 """
 Our modified resnet18 model with transfer learning.
 """
-class ResNet18_tr(nn.Module):
+class ResNet18_tl(nn.Module):
     def __init__(self):
-        super(ResNet18_tr, self).__init__()
+        super(ResNet18_tl, self).__init__()
         model_ft = models.resnet18(pretrained=True)
         set_parameter_requires_grad(model_ft, True)
         self.features = nn.Sequential(
